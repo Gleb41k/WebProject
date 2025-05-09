@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Премиальная электроника</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Apple Store</h1>
+        <p class="subtitle">Премиальные технологии для избранных</p>
+        <hr class="divider" />
+    </header>
+
+    <main class="content-wrapper">
+        <form id="addProductForm" class="product-form">
+            <h2>Добавить новый товар</h2>
+            <input type="text" id="productName" placeholder="Название" required>
+            <input type="text" id="productDescription" placeholder="Описание" required>
+            <input type="url" id="productImage" placeholder="Ссылка на изображение" required>
+            <button type="submit">Добавить</button>
+        </form>
+
+        <section class="gallery" id="gallery"></section>
+    </main>
+
+    <div class="modal" id="imageModal">
+        <img id="modalImage" src="" alt="Изображение товара" />
+    </div>
+
+    <div class="modal" id="confirmModal">
+        <div class="confirm-dialog">
+            <h3>Подтверждение удаления</h3>
+            <p>Вы уверены, что хотите удалить этот товар?</p>
+            <div class="confirm-buttons">
+                <button id="confirmDelete">Удалить</button>
+                <button id="cancelDelete">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

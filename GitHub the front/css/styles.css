@@ -1,0 +1,300 @@
+:root {
+    --bg: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #eeeeee;
+    --gray: #888;
+    --product-image-height: 500px;
+    --card-width: 320px;
+    --gap: 20px;
+    --danger: #e74c3c;
+    --danger-hover: #c0392b;
+    --secondary: #7f8c8d;
+    --secondary-hover: #95a5a6;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px auto 30px;
+    width: 80%;
+}
+
+.product-form {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--border);
+    margin-bottom: var(--gap);
+}
+
+    .product-form h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+
+    .product-form input,
+    .product-form button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+
+
+    .product-form input {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text);
+    }
+
+    .product-form button {
+        background: var(--border);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .product-form button:hover {
+            background: var(--gray);
+        }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+    gap: var(--gap);
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+    .gallery:empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .card img {
+        width: 100%;
+        height: var(--product-image-height);
+        object-fit: contain;
+        border-bottom: 1px solid var(--border);
+        background-color: white;
+    }
+
+.card-content {
+    padding: 20px;
+}
+
+    .card-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+        color: var(--gray);
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .card-content button {
+        padding: 10px;
+        background: var(--danger);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+        .card-content button:hover {
+            background: var(--danger-hover);
+        }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+    .modal.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .modal img {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+.confirm-dialog {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+    .confirm-dialog h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+    .confirm-dialog p {
+        margin-bottom: 25px;
+        color: var(--gray);
+    }
+
+.confirm-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+    .confirm-buttons button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 0.95rem;
+    }
+
+#confirmDelete {
+    background: var(--danger);
+    color: white;
+}
+
+    #confirmDelete:hover {
+        background: var(--danger-hover);
+    }
+
+#cancelDelete {
+    background: var(--secondary);
+    color: white;
+}
+
+    #cancelDelete:hover {
+        background: var(--secondary-hover);
+    }
+
+body.blurred main,
+body.blurred header {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.empty-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.5rem;
+    background: var(--bg);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 530px;
+        margin: 0 auto;
+    }
+
+    .confirm-buttons {
+        flex-direction: column;
+    }
+
+        .confirm-buttons button {
+            width: 100%;
+        }
+}
