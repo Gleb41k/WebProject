@@ -1,7 +1,6 @@
 Apple Store Gallery
 
-![image](https://github.com/user-attachments/assets/e6a4bab2-ff3c-40ed-90f4-ac48572d711f)
-![image](https://github.com/user-attachments/assets/85eb51a6-6a5e-401c-9635-896066d7a3fa)
+![image](https://github.com/user-attachments/assets/e6a4bab2-ff3c-40ed-90f4-ac48572d711f) ![image](https://github.com/user-attachments/assets/85eb51a6-6a5e-401c-9635-896066d7a3fa)
 
 
 
